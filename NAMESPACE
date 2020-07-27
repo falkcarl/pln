@@ -1,0 +1,7 @@
+useDynLib(pln)
+export(nrbcpln)
+export(nrmlepln)
+export(nrmlerasch)
+export(startalphas)
+export(startbetas)
+export(simulpln)
