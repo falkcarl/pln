@@ -1,8 +1,8 @@
 Package: pln
 Type: Package
 Title: Polytomous logit-normit (graded logistic) model estimation
-Version: 0.2-1
-Date: 2013-01-24
+Version: 0.2-2
+Date: 2020-07-28
 Author: Carl F. Falk and Harry Joe
 Maintainer: Carl F. Falk <cffalk@gmail.com>
 Description: Performs bivariate composite likelihood and full
