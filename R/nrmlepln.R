@@ -134,7 +134,7 @@
 #'  \code{\link{startbetas}}
 #'
 #' @importFrom stats pchisq
-#' @useDynLib pln
+#' @useDynLib pln, .registration=TRUE
 #' @export
 nrmlepln <- function (x, ncat, nitem=NULL, alphas=NULL, betas=NULL, abound=c(-10,10),
     bbound=c(-1,10), nq=48, mxiter=200, m2=TRUE, iprint=FALSE) {
