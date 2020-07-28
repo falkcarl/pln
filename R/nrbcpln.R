@@ -1,3 +1,4 @@
+#' @export
 nrbcpln<- function (x, ncat, nitem=NULL, alphas=NULL, betas=NULL, abound=c(-10,10),
     bbound=c(-1,10), nq=48, mxiter=200, se=TRUE, iprint=FALSE) {
 

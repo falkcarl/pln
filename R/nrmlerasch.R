@@ -1,3 +1,4 @@
+#' @export
 nrmlerasch <- function (x, ncat, nitem=NULL, alphas=NULL, abound=c(-10,10),
     bbound=c(-1,10), nq=48, mxiter=200,  m2=TRUE, iprint=FALSE) {
 

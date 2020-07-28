@@ -10,8 +10,6 @@ Description: Performs bivariate composite likelihood and full
         logit-normit (graded logistic) item response theory (IRT)
         models.
 Depends: R (>= 2.9.0)
-License: GPL-3
+License: GPL-3 + file LICENSE
 LazyLoad: yes
-Packaged: 2013-01-25 07:33:53 UTC; cf
-Repository: CRAN
-Date/Publication: 2013-01-25 08:58:37
+RoxygenNote: 7.1.0
