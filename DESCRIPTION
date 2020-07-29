@@ -1,6 +1,6 @@
 Package: pln
 Type: Package
-Title: Polytomous logit-normit (graded logistic) model estimation
+Title: Polytomous Logit-Normit (Graded Logistic) Model Estimation
 Version: 0.2-2
 Date: 2020-07-28
 Author: Carl F. Falk and Harry Joe
@@ -10,6 +10,6 @@ Description: Performs bivariate composite likelihood and full
         logit-normit (graded logistic) item response theory (IRT)
         models.
 Depends: R (>= 2.9.0)
-License: GPL-3 + file LICENSE
+License: GPL-3
 LazyLoad: yes
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
