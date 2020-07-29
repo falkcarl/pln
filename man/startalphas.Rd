@@ -3,7 +3,7 @@
 \name{startalphas}
 \alias{startalphas}
 \alias{startbetas}
-\title{Starting values for polytymous logit-normit model}
+\title{Starting values for polytomous logit-normit model}
 \usage{
 startalphas(x, ncat, nitem = NULL)
 startbetas(x, ncat, nitem = NULL)
@@ -28,13 +28,13 @@ columns in \code{x} will be selected as the number of items.}
 A vector of starting values, depending on which function was called.
 }
 \description{
-Computes starting values for estimation of polytymous logit-normit model.
+Computes starting values for estimation of polytomous logit-normit model.
 }
 \details{
 \code{startalphas} computes starting values for the (decreasing) cutpoints
   for the items based on logit transformed probabilities, assuming independent items.
 
-  \code{startbetas} computes starting values for slopes under the polytymous
+  \code{startbetas} computes starting values for slopes under the polytomous
   logit-normit model, using a method based on values that are proportional to the
   average correlations of each item with all other items. Starting values are
   currently bounded between -.2 and 1.

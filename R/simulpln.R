@@ -23,7 +23,7 @@
 #'          \Psi (\alpha_i,k + \beta_i*\eta) - \Psi (\alpha_i,k+1 + \beta_i*\eta)  if 0 < k_i < m-1,  
 #'          \Psi (\alpha_i,k+1 + \beta_i*\eta)  if k_i = m-1}.
 #'      }
-#'    Where the items are \eqn{y_i, i = 1, \dots, n}, and response categories are \eqn{k=0, \dots, m-1}. \eqn{\eta} is the latent trait, \eqn{\Psi} is the logistic distribution function, \eqn{\alpha} is an intercept (cutpoint) parameter, and \eqn{\beta} is a slope parameter. When the number of categories for the items is 2, this reduceds to the 2PL parameterization:
+#'    Where the items are \eqn{y_i, i = 1, \dots, n}, and response categories are \eqn{k=0, \dots, m-1}. \eqn{\eta} is the latent trait, \eqn{\Psi} is the logistic distribution function, \eqn{\alpha} is an intercept (cutpoint) parameter, and \eqn{\beta} is a slope parameter. When the number of categories for the items is 2, this reduces to the 2PL parameterization:
 #'      \deqn{Pr(y_i = 1| \eta) = \Psi (\alpha_1 + \beta_i \eta)}
 #'    
 #' @return  A data matrix in which each row represents a response pattern and the final column represents the frequency of each response pattern.

@@ -58,15 +58,15 @@
 #'  \Psi (\alpha_i,k + \beta_i*\eta) - \Psi (\alpha_i,k+1 + \beta_i*\eta)  if 0 < k_i < m-1,  
 #'  \Psi (\alpha_i,k+1 + \beta_i*\eta)  if k_i = m-1}.
 #'  }
-#'  Where the items are \eqn{y_i, i = 1, \dots, n}, and response categories are \eqn{k=0, \dots, m-1}. \eqn{\eta} is the latent trait, \eqn{\Psi} is the logistic distribution function, \eqn{\alpha} is an intercept (cutpoint) parameter, and \eqn{\beta} is a slope parameter. When the number of categories for the items is 2, this reduceds to the 2PL parameterization:
+#'  Where the items are \eqn{y_i, i = 1, \dots, n}, and response categories are \eqn{k=0, \dots, m-1}. \eqn{\eta} is the latent trait, \eqn{\Psi} is the logistic distribution function, \eqn{\alpha} is an intercept (cutpoint) parameter, and \eqn{\beta} is a slope parameter. When the number of categories for the items is 2, this reduces to the 2PL parameterization:
 #'  \deqn{Pr(y_i = 1| \eta) = \Psi (\alpha_1 + \beta_i \eta)}
-#'  Both \code{nrmlepln} and \code{nrbcpln} perform estimation under these parameterizations, via Newton Raphson iterations, using full information maximum likelihood (\code{nrmlepln}) and bivariate composite likelihood (\code{nrbcpln}). See Maydeu-Olivares and Joe (2005, 2006) for more information on bivariate composite likelihood estimation (see also Varin, Reid, and Firth, 2011). Under \code{nrmlerasch} a common \eqn{\beta} paramter is estimated for all items.
+#'  Both \code{nrmlepln} and \code{nrbcpln} perform estimation under these parameterizations, via Newton Raphson iterations, using full information maximum likelihood (\code{nrmlepln}) and bivariate composite likelihood (\code{nrbcpln}). See Maydeu-Olivares and Joe (2005, 2006) for more information on bivariate composite likelihood estimation (see also Varin, Reid, and Firth, 2011). Under \code{nrmlerasch} a common \eqn{\beta} parameter is estimated for all items.
 #'  
 #' @return A list containing the following slots.
 #' @slot alphas A vector of parameter estimates for alphas. Length is
 #'  \code{nitem}\eqn{\times}{ X }(\code{ncat}-1). Estimates are in order by item, e.g., all alphas
 #'  for item 1, followed by all alphas for item 2, and so on.
-#' @slot betas A vector of paraemter estimates for betas. Length is \code{nitem}.
+#' @slot betas A vector of parameter estimates for betas. Length is \code{nitem}.
 #' @slot nllk Negative (composite) log-likelihood for polytomous 
 #'  logit-normit (or Rasch) model.
 #' @slot conv Integer indicating whether estimation converged. Currently only returned for
@@ -76,7 +76,7 @@
 #' @slot invhes Inverse Hessian matrix for the MLE estimates.
 #' @slot vcov Asymptotic covariance matrix for the composite likelihood estimates.
 #' @slot teststat Value of \eqn{M_2}.
-#' @slot df Degrees of fredom for \eqn{M_2}.
+#' @slot df Degrees of freedom for \eqn{M_2}.
 #' @slot pval P-value for \eqn{M_2}.
 #'  
 #' @references
