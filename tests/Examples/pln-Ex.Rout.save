@@ -1,8 +1,7 @@
 
-R version 2.15.2 (2012-10-26) -- "Trick or Treat"
-Copyright (C) 2012 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
-Platform: i386-apple-darwin9.8.0/i386 (32-bit)
+R version 4.4.0 (2024-04-24 ucrt) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,9 +20,11 @@ Type 'q()' to quit R.
 > pkgname <- "pln"
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
+> options(pager = "console")
 > library('pln')
 > 
-> assign(".oldSearch", search(), pos = 'CheckExEnv')
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("nrmlepln")
 > ### * nrmlepln
@@ -35,17 +36,15 @@ Type 'q()' to quit R.
 > ###   likelihood estimation for polytomous logit-normit (graded logistic)
 > ###   model
 > ### Aliases: nrmlepln nrmlerasch nrbcpln
-> ### Keywords: models
 > 
 > ### ** Examples
 > 
-> 
-> ### Matrix of response patterns and frequencies
-> data(item5fr)
-> 
-> ## ML estimation
-> nrmleplnout<-nrmlepln(item5fr, ncat=3, nitem=5)
-> print(nrmleplnout)
+>  ### Matrix of response patterns and frequencies
+>  data(item5fr)
+>  
+>  ## ML estimation
+>  nrmleplnout<-nrmlepln(item5fr, ncat=3, nitem=5)
+>  print(nrmleplnout)
 $alphas
  [1]  0.44691106 -0.29603102  1.00293391 -1.01009244  0.47298349 -0.28064652
  [7]  0.46313085 -0.09086462  0.32886609 -0.71298309
@@ -122,10 +121,10 @@ $df
 $pval
 [1] 0.2552842
 
-> 
-> ## BCL estimation
-> nrbcplnout<-nrbcpln(item5fr, ncat=3, nitem=5)
-> print(nrbcplnout)
+>  
+>  ## BCL estimation
+>  nrbcplnout<-nrbcpln(item5fr, ncat=3, nitem=5)
+>  print(nrbcplnout)
 $alphas
  [1]  0.44877518 -0.29262834  0.95244435 -1.01160155  0.47208344 -0.27948695
  [7]  0.47391475 -0.08695326  0.32200660 -0.73633650
@@ -196,10 +195,10 @@ $vcov
 [14,]  7.376827e-03 -0.0272656901  2.947260e-03  7.236859e-02  2.382010e-03
 [15,]  1.191315e-02 -0.0484951288  4.499744e-03  2.382010e-03  8.401687e-02
 
-> 
-> ## ML Rasch estimation
-> nrmleraschout<-nrmlerasch(item5fr, ncat=3, nitem=5)
-> print(nrmleraschout)
+>  
+>  ## ML Rasch estimation
+>  nrmleraschout<-nrmlerasch(item5fr, ncat=3, nitem=5)
+>  print(nrmleraschout)
 $alphas
  [1]  0.38368665 -0.26478485  0.63043933 -0.64842445  0.49544668 -0.28756622
  [7]  0.53142029 -0.09316107  0.35427344 -0.79161748
@@ -252,23 +251,7 @@ $df
 $pval
 [1] 0.1472159
 
-> 
-> ## Not run: 
-> ##D ### Raw data
-> ##D data(item9cat5)
-> ##D 
-> ##D ## ML estimation
-> ##D nrmleplnout<-nrmlepln(item9cat5, ncat=5)
-> ##D print(nrmleplnout)
-> ##D 
-> ##D ## BCL estimation
-> ##D nrbcplnout<-nrbcpln(item9cat5, ncat=5, se=FALSE)
-> ##D print(nrbcplnout)
-> ##D 
-> ##D ## ML Rasch estimation
-> ##D nrmleraschout<-nrmlerasch(item9cat5, ncat=5)
-> ##D print(nrmleraschout)
-> ## End(Not run)
+>  
 > 
 > 
 > 
@@ -283,21 +266,19 @@ $pval
 > ### Title: Simulate data from polytomous logit-normit (graded logistic)
 > ###   model
 > ### Aliases: simulpln
-> ### Keywords: models
 > 
 > ### ** Examples
 > 
-> 
-> n<-500;
-> ncat<-3;
-> nitem<-5
-> alphas=c(0,-.5,  .2,-1,  .4,-.6,  .3,-.2,  .5,-.5)
-> betas=c(1,1,1,.5,.5)
-> 
-> set.seed(1234567)
-> datfr<-simulpln(n,nitem,ncat,alphas,betas)
-> nrmleplnout<-nrmlepln(datfr, ncat=ncat, nitem=nitem)
-> nrmleplnout
+>    n<-500;
+>    ncat<-3;
+>    nitem<-5
+>    alphas=c(0,-.5,  .2,-1,  .4,-.6,  .3,-.2,  .5,-.5)
+>    betas=c(1,1,1,.5,.5)
+>    
+>    set.seed(1234567)
+>    datfr<-simulpln(n,nitem,ncat,alphas,betas)
+>    nrmleplnout<-nrmlepln(datfr, ncat=ncat, nitem=nitem)
+>    nrmleplnout
 $alphas
  [1] -0.05009218 -0.76518577  0.39389686 -0.84505224  0.50003775 -0.48329505
  [7]  0.18985118 -0.32388642  0.52879790 -0.54698600
@@ -377,7 +358,6 @@ $pval
 > 
 > 
 > 
-> 
 > cleanEx()
 > nameEx("startalphas")
 > ### * startalphas
@@ -385,11 +365,10 @@ $pval
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: startalphas
-> ### Title: Starting values for polytymous logit-normit model
+> ### Title: Starting values for polytomous logit-normit model
 > ### Aliases: startalphas startbetas
 > 
 > ### ** Examples
-> 
 > 
 > ### Raw data
 > data(item9cat5)
@@ -429,8 +408,7 @@ $conv
 [1] 1
 
 > 
-> 
-> ### Matrix of response patterns and frequencies
+> ## Matrix of response patterns and frequencies
 > data(item5fr)
 > 
 > myAlphas<-startalphas(item5fr, ncat=3, nitem=5)
@@ -457,14 +435,16 @@ $nllk
 $conv
 [1] 1
 
-> 
+>   
 > 
 > 
 > 
 > ### * <FOOTER>
 > ###
-> cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.497 0.008 0.53 0 0 
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.14 0.01 0.25 NA NA 
 > grDevices::dev.off()
 null device 
           1 
